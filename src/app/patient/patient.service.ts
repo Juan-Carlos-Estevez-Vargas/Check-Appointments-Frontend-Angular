@@ -6,7 +6,7 @@ import { Patient } from './Patient';
 @Injectable({
   providedIn: 'root'
 })
-export class PacienteService {
+export class PatientService {
   private url:string = "http://localhost:8080/patient"
   constructor(private http:HttpClient) { }
 
