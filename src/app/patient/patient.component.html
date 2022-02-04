@@ -1,29 +1,27 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <button class="btn btn-info" type="button" [routerLink]="['/patient']">
+    Add Patient
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">ID Type</th>
+        <th scope="col">EPS</th>
+        <th scope="col">Clinic History</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <th scope="row">{{ patient.idPatient }}</th>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.dateOfBirth }}</td>
+        <td>{{ patient.idType }}</td>
+        <td>{{ patient.eps }}</td>
+        <td>{{ patient.clinicHistory }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

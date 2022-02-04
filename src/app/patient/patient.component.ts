@@ -9,7 +9,7 @@ import { PatientService } from './patient.service';
 })
 export class PatientComponent implements OnInit {
   title:string = "Patient's List";
-  private patients:Patient[] = [];
+  patients:Patient[] = [];
 
   constructor(private patientService:PatientService) { }
 
