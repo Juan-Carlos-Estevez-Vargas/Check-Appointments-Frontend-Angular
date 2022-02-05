@@ -1,1 +1,81 @@
+<div class="container">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <form action="">
+      <div class="form-group row">
+        <label for="id" class="col-form-label col-sm-2">ID</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            [(ngModel)]="patient.idPatient"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="name" class="col-form-label col-sm-2">Name</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [(ngModel)]="patient.name"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="dateOfBirth" class="col-form-label col-sm-2"
+          >Date Of Birth</label
+        >
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="dateOfBirth"
+            [(ngModel)]="patient.dateOfBirth"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="idType" class="col-form-label col-sm-2">ID Type</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="idType"
+            [(ngModel)]="patient.idType"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="eps" class="col-form-label col-sm-2">EPS</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="eps"
+            [(ngModel)]="patient.eps"
+          />
+        </div>
+        <div class="form-group row">
+          <label for="clinicHistory" class="col-form-label col-sm-2"
+            >Clinic History</label
+          >
+          <div class="col-sm-6">
+            <input
+              type="text"
+              class="form-control"
+              name="clinicHistory"
+              [(ngModel)]="patient.clinicHistory"
+            />
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success" role="button" (click)="create()">
+        Add
+      </button>
+    </form>
+  </div>
+</div>
 <p>patient-form works!</p>
