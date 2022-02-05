@@ -11,6 +11,7 @@
         <th scope="col">ID Type</th>
         <th scope="col">EPS</th>
         <th scope="col">Clinic History</th>
+        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,16 @@
         <td>{{ patient.idType }}</td>
         <td>{{ patient.eps }}</td>
         <td>{{ patient.clinicHistory }}</td>
+        <td>
+          <button
+            type="button"
+            name="button"
+            class="btn btn-primary"
+            [routerLink]="['/patient', patient.idPatient]"
+          >
+            Edit
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

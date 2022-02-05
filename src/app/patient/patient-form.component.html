@@ -72,9 +72,19 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-success" role="button" (click)="create()">
+      <button
+        class="btn btn-success"
+        role="button"
+        (click)="create()"
+        *ngIf="!patient.idPatient; else elseBlock"
+      >
         Add
       </button>
+      <ng-template #elseBlock>
+        <button class="btn btn-success" role="button" (click)="update()">
+          Update
+        </button>
+      </ng-template>
     </form>
   </div>
 </div>

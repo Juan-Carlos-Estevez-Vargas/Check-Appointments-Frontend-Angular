@@ -11,6 +11,7 @@ const routes:Routes=[
   {path:'', redirectTo:'/patient/findAll', pathMatch:'full'},
   {path:'patient/findAll', component:PatientComponent},
   {path:'patient', component:PatientFormComponent},
+  {path:'patient/:idPatient', component:PatientFormComponent},
 ];
 
 @NgModule({
