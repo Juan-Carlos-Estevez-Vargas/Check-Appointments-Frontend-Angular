@@ -13,11 +13,18 @@ export class PatientComponent implements OnInit {
 
   constructor(private patientService:PatientService) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {  
     // Lista de pacientes
     this.patientService.getAll().subscribe(
       e => this.patients = e
+    );
+  }
+
+  delete(patient:Patient):void {
+    this.patientService.delete(patient.idPatient).subscribe(
+      response => this.patientService.getAll().subscribe(
+        res => this.patients = res
+      )
     );
   }
 
