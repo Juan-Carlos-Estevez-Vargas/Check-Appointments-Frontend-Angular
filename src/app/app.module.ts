@@ -8,7 +8,7 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient/patient-form.component';
 
 const routes:Routes=[
-  {path:'', redirectTo:'/patient/findAll', pathMatch:'full'},
+  {path:'', redirectTo:'', pathMatch:'full'},
   {path:'patient/findAll', component:PatientComponent},
   {path:'patient', component:PatientFormComponent},
   {path:'patient/:idPatient', component:PatientFormComponent},

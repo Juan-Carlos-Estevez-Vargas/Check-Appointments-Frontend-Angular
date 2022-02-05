@@ -1,44 +1,120 @@
-<div class="container">
-  <button class="btn btn-info" type="button" [routerLink]="['/patient']">
-    Add Patient
-  </button>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Full Name</th>
-        <th scope="col">Date Of Birth</th>
-        <th scope="col">ID Type</th>
-        <th scope="col">EPS</th>
-        <th scope="col">Clinic History</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let patient of patients">
-        <th scope="row">{{ patient.idPatient }}</th>
-        <td>{{ patient.name }}</td>
-        <td>{{ patient.dateOfBirth }}</td>
-        <td>{{ patient.idType }}</td>
-        <td>{{ patient.eps }}</td>
-        <td>{{ patient.clinicHistory }}</td>
-        <td>
-          <button
-            type="button"
-            name="button"
-            class="btn btn-primary"
-            [routerLink]="['/patient', patient.idPatient]"
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+      <div class="container">
+        <a href="#" class="navbar-brand">Check-Appointment's</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item px-2">
+              <a href="patient.component.html" class="nav-link active"
+                >Angular</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-3">
+              <a href="patient.component.html" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span> Bienvenido</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <form>
+                <a href="#" class="nav-link">
+                  <i class="fas fa-user-times"></i> Logout
+                </a>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="main-header" class="py-2 bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1><i class="fas fa-user-cog"></i> Patient's Control</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="py-4 mb-4 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a
+            href="#"
+            class="btn btn-primary btn-block"
+            data-toggle="modal"
+            data-target="#addPatient"
+            [routerLink]="['/patient']"
           >
-            Edit
-          </button>
-        </td>
-        <td>
-          <button class="btn btn-danger" (click)="delete(patient)">
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            <i class="fas fa-plus"></i> Add Patient
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="patients">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header">
+              <h4>Patient's List</h4>
+            </div>
+            <div>
+              <table class="table table-stryped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th scope="col">ID Type</th>
+                    <th scope="col">EPS</th>
+                    <th scope="col">Clinic History</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let patient of patients">
+                    <th scope="row">{{ patient.idPatient }}</th>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.dateOfBirth }}</td>
+                    <td>{{ patient.idType }}</td>
+                    <td>{{ patient.eps }}</td>
+                    <td>{{ patient.clinicHistory }}</td>
+                    <td>
+                      <button
+                        type="button"
+                        name="button"
+                        class="btn btn-primary"
+                        [routerLink]="['/patient', patient.idPatient]"
+                      >
+                        <i class="fas fa-angle-double-right"></i> Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger" (click)="delete(patient)">
+                        <i class="fas fa-angle-double-right"></i> Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
