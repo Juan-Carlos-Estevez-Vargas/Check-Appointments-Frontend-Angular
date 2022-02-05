@@ -18,7 +18,7 @@ const routes:Routes=[
   declarations: [
     AppComponent,
     PatientComponent,
-    PatientFormComponent
+    PatientFormComponent,
   ],
   imports: [
     BrowserModule,
