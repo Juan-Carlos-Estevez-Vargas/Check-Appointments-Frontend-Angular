@@ -9,9 +9,10 @@ import { PatientFormComponent } from './patient/patient-form.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { DoctorFormComponent } from './doctor/doctor-form/doctor-form.component';
 import { NavBarComponent } from './commons/nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
 
 const routes:Routes=[
-  {path:'', redirectTo:'', pathMatch:'full'},
+  {path:'', component:HomeComponent},
   {path:'patient/findAll', component:PatientComponent},
   {path:'doctor/findAll', component:DoctorComponent},
   {path:'patient', component:PatientFormComponent},
@@ -28,6 +29,7 @@ const routes:Routes=[
     DoctorComponent,
     DoctorFormComponent,
     NavBarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
