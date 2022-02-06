@@ -37,7 +37,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i class="fas fa-user-cog"></i> Patient's Control</h1>
+          <h1><i class="fas fa-user-cog"></i> Doctor's Control</h1>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
             class="btn btn-success btn-block"
             role="button"
             (click)="create()"
-            *ngIf="!patient.idPatient; else elseBlock"
+            *ngIf="!doctor.idDoctor; else elseBlock"
           >
             <i class="fas fa-check"></i> Save
           </button>
@@ -81,19 +81,19 @@
             <div class="col">
               <div class="card col-md-10">
                 <div class="card-header">
-                  <h4>Edit Patient</h4>
+                  <h4>Edit Doctor</h4>
                 </div>
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="id" class="col-form-label col-md-3"
-                      >ID Patient</label
+                      >ID Doctor</label
                     >
                     <div class="col-sm-6">
                       <input
                         type="text"
                         class="form-control"
                         name="id"
-                        [(ngModel)]="patient.idPatient"
+                        [(ngModel)]="doctor.idDoctor"
                       />
                     </div>
                   </div>
@@ -106,20 +106,7 @@
                         type="text"
                         class="form-control"
                         name="name"
-                        [(ngModel)]="patient.name"
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="dateOfBirth" class="col-form-label col-md-3"
-                      >Date Of Birth</label
-                    >
-                    <div class="col-sm-6">
-                      <input
-                        type="date"
-                        class="form-control"
-                        name="dateOfBirth"
-                        [(ngModel)]="patient.dateOfBirth"
+                        [(ngModel)]="doctor.doctorsName"
                       />
                     </div>
                   </div>
@@ -132,32 +119,79 @@
                         type="text"
                         class="form-control"
                         name="idType"
-                        [(ngModel)]="patient.idType"
+                        [(ngModel)]="doctor.idType"
                       />
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="eps" class="col-form-label col-sm-3">EPS</label>
+                    <label
+                      for="numberProfessionalCard"
+                      class="col-form-label col-md-3"
+                      ># Professional Card</label
+                    >
                     <div class="col-sm-6">
                       <input
                         type="text"
                         class="form-control"
-                        name="eps"
-                        [(ngModel)]="patient.eps"
+                        name="numberProfessionalCard"
+                        [(ngModel)]="doctor.numberProfessionalCard"
                       />
                     </div>
-                    <div class="form-group row">
-                      <label for="clinicHistory" class="col-form-label col-md-3"
-                        >Clinic History</label
-                      >
-                      <div class="col-sm-6">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="clinicHistory"
-                          [(ngModel)]="patient.clinicHistory"
-                        />
-                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="yearsExperience" class="col-form-label col-sm-3"
+                      >Years Experience</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="yearsExperience"
+                        [(ngModel)]="doctor.yearsExperience"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="specialty" class="col-form-label col-md-3"
+                      >Specialty</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="specialty"
+                        [(ngModel)]="doctor.specialty"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label
+                      for="attentionStartTime"
+                      class="col-form-label col-md-3"
+                      >Attention Start Time</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="attentionStartTime"
+                        [(ngModel)]="doctor.attentionStartTime"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label
+                      for="attentionEndTime"
+                      class="col-form-label col-md-3"
+                      >Attention End Time</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="attentionEndTime"
+                        [(ngModel)]="doctor.attentionEndTime"
+                      />
                     </div>
                   </div>
                 </div>

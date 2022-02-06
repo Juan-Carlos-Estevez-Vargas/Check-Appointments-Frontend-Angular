@@ -6,12 +6,17 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient/patient-form.component';
+import { DoctorComponent } from './doctor/doctor.component';
+import { DoctorFormComponent } from './doctor/doctor-form/doctor-form.component';
 
 const routes:Routes=[
   {path:'', redirectTo:'', pathMatch:'full'},
   {path:'patient/findAll', component:PatientComponent},
+  {path:'doctor/findAll', component:DoctorComponent},
   {path:'patient', component:PatientFormComponent},
+  {path:'doctor', component:DoctorFormComponent},
   {path:'patient/:idPatient', component:PatientFormComponent},
+  {path:'doctor/:idDoctor', component:DoctorFormComponent},
 ];
 
 @NgModule({
@@ -19,6 +24,8 @@ const routes:Routes=[
     AppComponent,
     PatientComponent,
     PatientFormComponent,
+    DoctorComponent,
+    DoctorFormComponent,
   ],
   imports: [
     BrowserModule,
