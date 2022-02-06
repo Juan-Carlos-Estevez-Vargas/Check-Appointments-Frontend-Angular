@@ -8,6 +8,7 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient/patient-form.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { DoctorFormComponent } from './doctor/doctor-form/doctor-form.component';
+import { NavBarComponent } from './commons/nav-bar/nav-bar.component';
 
 const routes:Routes=[
   {path:'', redirectTo:'', pathMatch:'full'},
@@ -26,6 +27,7 @@ const routes:Routes=[
     PatientFormComponent,
     DoctorComponent,
     DoctorFormComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
