@@ -11,7 +11,6 @@ import { DoctorService } from '../doctor.service';
 export class DoctorFormComponent implements OnInit {
   doctor:Doctor = new Doctor();
   title:string = "Add Doctor";
-
   constructor(private doctorService:DoctorService, private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -1,0 +1,131 @@
+<header>
+  <app-nav-bar></app-nav-bar>
+  <section id="main-header" class="py-2 bg-info text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fas fa-user-cog"></i> Appointment's Control</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<section>
+  <div class="py-4 mb-4 bg-light" id="actions">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="/appointment/findAll" class="btn btn-light btn-block">
+            <i class="fas fa-arrow-left"></i> Back
+          </a>
+        </div>
+        <div class="col-md-3">
+          <button
+            class="btn btn-success btn-block"
+            role="button"
+            (click)="create()"
+            *ngIf="!appointment.idAppointment; else elseBlock"
+          >
+            <i class="fas fa-check"></i> Save
+          </button>
+          <ng-template #elseBlock>
+            <button class="btn btn-success" role="button" (click)="update()">
+              Update
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <form>
+    <section>
+      <div id="details">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card col-md-10">
+                <div class="card-header">
+                  <h4>Edit Appointment</h4>
+                </div>
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label for="id" class="col-form-label col-md-3"
+                      >ID Appointment</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="id"
+                        required="true"
+                        [(ngModel)]="appointment.idAppointment"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="doctor" class="col-form-label col-md-3"
+                      >Doctor</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="doctor"
+                        required
+                        [(ngModel)]="appointment.doctor"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="patient" class="col-form-label col-md-3"
+                      >Patient</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="patient"
+                        required="true"
+                        [(ngModel)]="appointment.patient"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="date" class="col-form-label col-md-3"
+                      >Date</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="date"
+                        class="form-control"
+                        name="date"
+                        required="true"
+                        [(ngModel)]="appointment.date"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="hour" class="col-form-label col-sm-3"
+                      >Hour</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="time"
+                        class="form-control"
+                        name="hour"
+                        required="true"
+                        [(ngModel)]="appointment.hour"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+</section>

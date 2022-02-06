@@ -1,0 +1,88 @@
+<body>
+  <header>
+    <app-nav-bar></app-nav-bar>
+    <section id="main-header" class="py-2 bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1><i class="fas fa-user-cog"></i> Appointment's Control</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="py-4 mb-4 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a
+            href="#"
+            class="btn btn-primary btn-block"
+            data-toggle="modal"
+            data-target="#addDoctor"
+            [routerLink]="['/appointment']"
+          >
+            <i class="fas fa-plus"></i> Add Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="appointments">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header">
+              <h4>Appointment's List</h4>
+            </div>
+            <div>
+              <table class="table table-stryped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Patient</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Hour</th>
+                    <th scope="col" colspan="2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let appointment of appointments">
+                    <th scope="row">{{ appointment.idAppointment }}</th>
+                    <td>{{ appointment.doctor }}</td>
+                    <td>{{ appointment.patient }}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.hour }}</td>
+                    <td>
+                      <button
+                        type="button"
+                        name="button"
+                        class="btn btn-primary"
+                        [routerLink]="[
+                          '/appointment',
+                          appointment.idAppointment
+                        ]"
+                      >
+                        <i class="fas fa-angle-double-right"></i> Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-danger"
+                        (click)="delete(appointment)"
+                      >
+                        <i class="fas fa-angle-double-right"></i> Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

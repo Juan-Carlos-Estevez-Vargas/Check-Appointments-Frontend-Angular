@@ -10,7 +10,6 @@ import { DoctorService } from './doctor.service';
 export class DoctorComponent implements OnInit {
   title:string = "Doctor's List";
   doctors:Doctor[] = [];
-
   constructor(private doctorService:DoctorService) { }
 
   ngOnInit(): void {
@@ -27,4 +26,5 @@ export class DoctorComponent implements OnInit {
       )
     );
   }
+
 }
