@@ -6,7 +6,7 @@ import { PatientService } from './patient.service';
 @Component({
   selector: 'app-patient-form',
   templateUrl: './patient-form.component.html',
-  styleUrls: ['./patient-form.component.css']
+  styleUrls: [/*'./patient-form.component.css'*/]
 })
 export class PatientFormComponent implements OnInit {
   patient:Patient = new Patient();

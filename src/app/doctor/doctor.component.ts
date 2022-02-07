@@ -5,7 +5,7 @@ import { DoctorService } from './doctor.service';
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
-  styleUrls: ['./doctor.component.css']
+  styleUrls: [/*'./doctor.component.css'*/]
 })
 export class DoctorComponent implements OnInit {
   title:string = "Doctor's List";

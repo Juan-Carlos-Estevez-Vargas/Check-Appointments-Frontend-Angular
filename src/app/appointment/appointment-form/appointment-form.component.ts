@@ -6,7 +6,7 @@ import { AppointmentService } from '../appointment.service';
 @Component({
   selector: 'app-appointment-form',
   templateUrl: './appointment-form.component.html',
-  styleUrls: ['./appointment-form.component.css']
+  styleUrls: [/*'./appointment-form.component.css'*/]
 })
 export class AppointmentFormComponent implements OnInit {
   appointment:Appointment = new Appointment();

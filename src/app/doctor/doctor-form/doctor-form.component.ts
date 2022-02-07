@@ -6,7 +6,7 @@ import { DoctorService } from '../doctor.service';
 @Component({
   selector: 'app-doctor-form',
   templateUrl: './doctor-form.component.html',
-  styleUrls: ['./doctor-form.component.css']
+  styleUrls: [/*'./doctor-form.component.css'*/]
 })
 export class DoctorFormComponent implements OnInit {
   doctor:Doctor = new Doctor();
