@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1><i class="fas fa-user-cog"></i> Patient's Control</h1>
+            <h1><em class="fas fa-user-cog"></em> Patient's Control</h1>
           </div>
         </div>
       </div>
@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-3">
           <a href="#" class="btn btn-light btn-block">
-            <i class="fas fa-arrow-left"></i> Back
+            <em class="fas fa-arrow-left"></em> Back
           </a>
         </div>
         <div class="col-md-3">
@@ -27,7 +27,7 @@
             data-target="#addPatient"
             [routerLink]="['/patient']"
           >
-            <i class="fas fa-plus"></i> Add Patient
+            <em class="fas fa-plus"></em> Add Patient
           </a>
         </div>
       </div>
@@ -43,6 +43,9 @@
             </div>
             <div>
               <table class="table table-stryped">
+                <caption>
+                  Patients List
+                </caption>
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
@@ -70,7 +73,7 @@
                         class="btn btn-primary"
                         [routerLink]="['/patient', patient.idPatient]"
                       >
-                        <i class="fas fa-angle-double-right"></i> Edit
+                        <em class="fas fa-angle-double-right"></em> Edit
                       </button>
                     </td>
                     <td>
@@ -101,7 +104,7 @@
             <div class="card-body">
               <h3>Total Patient's</h3>
               <h4 class="display-4">
-                <i class="fas fa-users" ((loadstart))="totalPatients()"></i>
+                <em class="fas fa-users" ((loadstart))="totalPatients()"></em>
               </h4>
             </div>
           </div>
