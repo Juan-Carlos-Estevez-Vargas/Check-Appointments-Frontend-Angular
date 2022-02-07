@@ -20,6 +20,10 @@ export class PatientComponent implements OnInit {
     );
   }
 
+  totalPatients():number {
+    return this.patients.length;
+  }
+
   delete(patient:Patient):void {
     this.patientService.delete(patient.idPatient).subscribe(
       response => this.patientService.getAll().subscribe(
