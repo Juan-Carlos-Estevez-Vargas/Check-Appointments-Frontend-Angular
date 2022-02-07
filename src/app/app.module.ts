@@ -12,6 +12,7 @@ import { NavBarComponent } from './commons/nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentFormComponent } from './appointment/appointment-form/appointment-form.component';
+import { FooterComponent } from './commons/footer/footer.component';
 
 const routes:Routes=[
   {path:'', component:HomeComponent},
@@ -37,6 +38,7 @@ const routes:Routes=[
     HomeComponent,
     AppointmentComponent,
     AppointmentFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
