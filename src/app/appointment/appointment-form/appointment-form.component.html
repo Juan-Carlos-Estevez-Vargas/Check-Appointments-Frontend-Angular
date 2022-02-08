@@ -69,13 +69,19 @@
                       >Doctor</label
                     >
                     <div class="col-sm-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="doctor"
+                      <select
                         required
+                        name="doctor"
+                        class="form-control"
                         [(ngModel)]="appointment.doctor"
-                      />
+                      >
+                        <option
+                          *ngFor="let doctor of doctors"
+                          value="{{ doctor.idDoctor }}"
+                        >
+                          {{ doctor.doctorsName }}
+                        </option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -83,13 +89,19 @@
                       >Patient</label
                     >
                     <div class="col-sm-6">
-                      <input
-                        type="text"
-                        class="form-control"
+                      <select
+                        required
                         name="patient"
-                        required="true"
+                        class="form-control"
                         [(ngModel)]="appointment.patient"
-                      />
+                      >
+                        <option
+                          *ngFor="let patient of patients"
+                          value="{{ patient.idPatient }}"
+                        >
+                          {{ patient.name }}
+                        </option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group row">

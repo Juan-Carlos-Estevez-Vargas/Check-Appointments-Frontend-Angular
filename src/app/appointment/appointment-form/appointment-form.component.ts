@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Doctor } from 'src/app/doctor/Doctor';
+import { DoctorService } from 'src/app/doctor/doctor.service';
+import { Patient } from 'src/app/patient/Patient';
+import { PatientService } from 'src/app/patient/patient.service';
 import { Appointment } from '../Appointment';
 import { AppointmentService } from '../appointment.service';
 
@@ -11,10 +15,22 @@ import { AppointmentService } from '../appointment.service';
 export class AppointmentFormComponent implements OnInit {
   appointment:Appointment = new Appointment();
   title:string = "Add Doctor";
-  constructor(private appointmentService:AppointmentService, private router:Router, private activatedRoute:ActivatedRoute) { }
+  doctors:Doctor[] = [];
+  patients:Patient[] = [];
+  constructor(private appointmentService:AppointmentService, private router:Router, private activatedRoute:ActivatedRoute, private doctorService:DoctorService, private patientService:PatientService) { }
 
   ngOnInit(): void {
     this.loadAppointmentById();
+
+    // Listado de médicos
+    this.doctorService.getAll().subscribe(
+      doctor => this.doctors = doctor
+    );
+
+    // Listado de pacientes
+    this.patientService.getAll().subscribe(
+      patient => this.patients = patient
+    );
   }
 
   /**
