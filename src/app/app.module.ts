@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentFormComponent } from './appointment/appointment-form/appointment-form.component';
 import { FooterComponent } from './commons/footer/footer.component';
+import { AboutComponent } from './about/about.component';
 
 const routes:Routes=[
   {path:'', component:HomeComponent},
@@ -25,6 +26,7 @@ const routes:Routes=[
   {path:'patient/:idPatient', component:PatientFormComponent},
   {path:'doctor/:idDoctor', component:DoctorFormComponent},
   {path:'appointment/:idAppointment', component:AppointmentFormComponent},
+  {path:'about', component:AboutComponent},
 ];
 
 @NgModule({
@@ -39,6 +41,7 @@ const routes:Routes=[
     AppointmentComponent,
     AppointmentFormComponent,
     FooterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,14 @@ import { AppointmentService } from './appointment.service';
 export class AppointmentComponent implements OnInit {
   title:string = "Appointment's List";
   appointments:Appointment[] = [];
+  total:number = 0;
   constructor(private appointmentService:AppointmentService) { }
 
   ngOnInit(): void {
     // Lista de médicos
     this.appointmentService.getAll().subscribe(
       appointment => this.appointments = appointment
-    );
+    );  
   }
 
   delete(appointment:Appointment):void {

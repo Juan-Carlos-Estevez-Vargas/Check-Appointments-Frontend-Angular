@@ -93,13 +93,15 @@
                       >ID Type</label
                     >
                     <div class="col-sm-6">
-                      <input
-                        type="text"
-                        class="form-control"
+                      <select
+                        required
                         name="idType"
-                        required="true"
+                        class="form-control"
                         [(ngModel)]="doctor.idType"
-                      />
+                      >
+                        <option value="CC">CC</option>
+                        <option value="TI">TI</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group row">
