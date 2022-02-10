@@ -13,7 +13,7 @@ import { AppointmentService } from '../appointment.service';
   styleUrls: [/*'./appointment-form.component.css'*/]
 })
 export class AppointmentFormComponent implements OnInit {
-  appointment:Appointment = new Appointment();
+  appointment = {} as Appointment;
   title:string = "Add Doctor";
   doctors:Doctor[] = [];
   patients:Patient[] = [];

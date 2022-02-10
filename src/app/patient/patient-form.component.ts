@@ -9,7 +9,7 @@ import { PatientService } from './patient.service';
   styleUrls: [/*'./patient-form.component.css'*/]
 })
 export class PatientFormComponent implements OnInit {
-  patient:Patient = new Patient();
+  patient = {} as Patient;
   title:string = "Add Patient";
 
   constructor(private patientService:PatientService, private router:Router, private activatedRoute:ActivatedRoute) { }
