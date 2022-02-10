@@ -7,7 +7,7 @@ import { Appointment } from './Appointment';
   providedIn: 'root'
 })
 export class AppointmentService {
-  private url:string = "http://localhost:8080/appointment"
+  private url = "http://localhost:8080/appointment";
   constructor(private http:HttpClient) { }
 
    /**

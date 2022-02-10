@@ -14,7 +14,7 @@ import { AppointmentService } from '../appointment.service';
 })
 export class AppointmentFormComponent implements OnInit {
   appointment = {} as Appointment;
-  title:string = "Add Doctor";
+  title = "Add Doctor";
   doctors:Doctor[] = [];
   patients:Patient[] = [];
   constructor(private appointmentService:AppointmentService, private router:Router, private activatedRoute:ActivatedRoute, private doctorService:DoctorService, private patientService:PatientService) { }
@@ -61,7 +61,7 @@ export class AppointmentFormComponent implements OnInit {
   loadAppointmentById():void {
     this.activatedRoute.params.subscribe(
       param => {
-        let id = param['idAppointment'];
+        const id = param['idAppointment'];
         if (id) {
           this.appointmentService.get(id).subscribe(
             appointment => this.appointment = appointment

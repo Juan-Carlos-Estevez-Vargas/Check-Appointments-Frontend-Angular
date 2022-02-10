@@ -1,6 +1,3 @@
-/**
- * Se encarga de mapear al paciente.
- */
 export interface Patient {
     idPatient:string;
     name:string;

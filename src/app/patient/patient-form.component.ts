@@ -10,7 +10,7 @@ import { PatientService } from './patient.service';
 })
 export class PatientFormComponent implements OnInit {
   patient = {} as Patient;
-  title:string = "Add Patient";
+  title = "Add Patient";
 
   constructor(private patientService:PatientService, private router:Router, private activatedRoute:ActivatedRoute) { }
 
@@ -46,7 +46,7 @@ export class PatientFormComponent implements OnInit {
   loadPatientById():void {
     this.activatedRoute.params.subscribe(
       param => {
-        let id = param['idPatient'];
+        const id = param['idPatient'];
         if (id) {
           this.patientService.get(id).subscribe(
             patient => this.patient = patient

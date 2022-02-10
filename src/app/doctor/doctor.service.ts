@@ -7,7 +7,7 @@ import { Doctor } from './Doctor';
   providedIn: 'root'
 })
 export class DoctorService {
-  private url:string = "http://localhost:8080/doctor"
+  private url = "http://localhost:8080/doctor";
   constructor(private http:HttpClient) { }
 
   /**

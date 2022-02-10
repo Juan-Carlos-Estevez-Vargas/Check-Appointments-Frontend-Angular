@@ -8,9 +8,9 @@ import { AppointmentService } from './appointment.service';
   styleUrls: [/*'./appointment.component.css'*/]
 })
 export class AppointmentComponent implements OnInit {
-  title:string = "Appointment's List";
+  title = "Appointment's List";
   appointments:Appointment[] = [];
-  total:number = 0;
+  total = 0;
   constructor(private appointmentService:AppointmentService) { }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ import { PatientService } from './patient.service';
   styleUrls: [/*'./patient.component.css'*/]
 })
 export class PatientComponent implements OnInit {
-  title:string = "Patients List";
+  title = "Patients List";
   patients:Patient[] = [];
 
   constructor(private patientService:PatientService) { }

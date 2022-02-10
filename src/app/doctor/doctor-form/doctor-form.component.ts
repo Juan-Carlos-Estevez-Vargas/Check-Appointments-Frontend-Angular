@@ -10,7 +10,7 @@ import { DoctorService } from '../doctor.service';
 })
 export class DoctorFormComponent implements OnInit {
   doctor = {} as Doctor;
-  title:string = "Add Doctor";
+  title = "Add Doctor";
   constructor(private doctorService:DoctorService, private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class DoctorFormComponent implements OnInit {
   loadDoctorById():void {
     this.activatedRoute.params.subscribe(
       param => {
-        let id = param['idDoctor'];
+        const id = param['idDoctor'];
         if (id) {
           this.doctorService.get(id).subscribe(
             doctor => this.doctor = doctor
