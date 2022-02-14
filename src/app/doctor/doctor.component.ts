@@ -21,9 +21,13 @@ export class DoctorComponent implements OnInit {
 
   delete(doctor:Doctor):void {
     this.doctorService.delete(doctor.idDoctor).subscribe(
-      response => this.doctorService.getAll().subscribe(
-        res => this.doctors = res
-      )
+      response => {
+        if (response != null) {
+          this.doctorService.getAll().subscribe(
+            res => this.doctors = res
+          )
+        }
+      }
     );
   }
 

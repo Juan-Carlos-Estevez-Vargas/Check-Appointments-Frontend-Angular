@@ -22,9 +22,13 @@ export class AppointmentComponent implements OnInit {
 
   delete(appointment:Appointment):void {
     this.appointmentService.delete(appointment.idAppointment).subscribe(
-      response => this.appointmentService.getAll().subscribe(
-        res => this.appointments = res
-      )
+      response => {
+        if (response != null) {
+          this.appointmentService.getAll().subscribe(
+            res => this.appointments = res
+          )
+        }
+      }
     );
   }
 

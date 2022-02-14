@@ -40,7 +40,11 @@ export class AppointmentFormComponent implements OnInit {
    create():void {
     console.log(this.appointment);
     this.appointmentService.create(this.appointment).subscribe(
-      response => this.router.navigate(['/appointment/findAll'])
+      response => {
+        if (response != null) {
+          this.router.navigate(['/appointment/findAll'])
+        }
+      }
     );
   }
 
@@ -50,7 +54,11 @@ export class AppointmentFormComponent implements OnInit {
    */
   update():void {
     this.appointmentService.update(this.appointment).subscribe(
-      response => this.router.navigate(['/appointment/findAll'])
+      response => {
+        if (response != null) {
+          this.router.navigate(['/appointment/findAll'])
+        }
+      }
     );
   }
 

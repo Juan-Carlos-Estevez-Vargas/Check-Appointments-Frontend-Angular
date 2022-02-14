@@ -24,7 +24,11 @@ export class DoctorFormComponent implements OnInit {
    create():void {
     console.log(this.doctor);
     this.doctorService.create(this.doctor).subscribe(
-      response => this.router.navigate(['/doctor/findAll'])
+      response => {
+        if (response != null) {
+          this.router.navigate(['/doctor/findAll'])
+        }
+      }
     );
   }
 
@@ -34,7 +38,11 @@ export class DoctorFormComponent implements OnInit {
    */
   update():void {
     this.doctorService.update(this.doctor).subscribe(
-      response => this.router.navigate(['/doctor/findAll'])
+      response => {
+        if (response != null) {
+          this.router.navigate(['/doctor/findAll'])
+        }
+      }
     );
   }
 

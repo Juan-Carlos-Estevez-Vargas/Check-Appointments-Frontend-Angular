@@ -16,7 +16,7 @@ export class PatientComponent implements OnInit {
   ngOnInit(): void {  
     // Lista de pacientes
     this.patientService.getAll().subscribe(
-      e => this.patients = e
+      patient => this.patients = patient
     );
   }
 
@@ -26,9 +26,13 @@ export class PatientComponent implements OnInit {
 
   delete(patient:Patient):void {
     this.patientService.delete(patient.idPatient).subscribe(
-      response => this.patientService.getAll().subscribe(
-        res => this.patients = res
-      )
+      response => {
+        if (response != null) {
+          this.patientService.getAll().subscribe(
+            res => this.patients = res
+          )
+        }
+      }
     );
   }
 
