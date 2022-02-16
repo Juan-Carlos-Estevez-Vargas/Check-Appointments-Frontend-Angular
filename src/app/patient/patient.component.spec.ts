@@ -1,8 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Patient } from './Patient';
-
-import { PatientComponent } from './patient.component';
 import { PatientService } from './patient.service';
 
 let httpClientSpy: { post: jasmine.Spy };
@@ -14,7 +10,7 @@ beforeEach(() => {
 });
 
 it('should return expected heroes (HttpClient called once)', () => {
-  const expectedPatient: Patient =  {
+  const expectedPatient: Patient = {
     "idPatient": "3030100",
     "name": "Mauricio Morales",
     "dateOfBirth": "2000-10-11",
@@ -24,7 +20,7 @@ it('should return expected heroes (HttpClient called once)', () => {
   };
 
   httpClientSpy.post.and.returnValue(expectAsync(expectedPatient));
-//  httpClientSpy.get.and.returnValue(asyncData(expectedHeroes));
+  //  httpClientSpy.get.and.returnValue(asyncData(expectedHeroes));
   patientService.create(expectedPatient).subscribe(
     patient => expect(patient).toEqual(expectedPatient, 'expected patient'),
     fail
