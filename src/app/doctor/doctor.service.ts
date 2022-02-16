@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Doctor } from './Doctor';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
-  private url = "http://localhost:8080/doctor";
-  constructor(private http:HttpClient) { }
+  private url = environment.baseUrl + "doctor";
+  constructor(private http: HttpClient) { }
 
   /**
    * Se encarga de conectarse con el API REST del backend 
@@ -17,7 +18,7 @@ export class DoctorService {
    * 
    * @returns Lista de médicos obtenida.
    */
-   getAll():Observable<Doctor[]>{
+  getAll(): Observable<Doctor[]> {
     return this.http.get<Doctor[]>(this.url + '/findAll');
   }
 
@@ -28,7 +29,7 @@ export class DoctorService {
    * 
    * @returns Inserción de médico.
    */
-  create(doctor:Doctor):Observable<Doctor>{
+  create(doctor: Doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.url, doctor);
   }
 
@@ -39,7 +40,7 @@ export class DoctorService {
    * 
    * @returns Médico encontrado.
    */
-  get(idDoctor:string):Observable<Doctor>{
+  get(idDoctor: string): Observable<Doctor> {
     return this.http.get<Doctor>(this.url + '/findById/' + idDoctor);
   }
 
@@ -50,7 +51,7 @@ export class DoctorService {
    * 
    * @returns Médico actualizado.
    */
-  update(doctor:Doctor):Observable<Doctor>{
+  update(doctor: Doctor): Observable<Doctor> {
     return this.http.put<Doctor>(this.url, doctor);
   }
 
@@ -61,7 +62,7 @@ export class DoctorService {
    * 
    * @returns Médico actualizado.
    */
-  delete(idDoctor:string):Observable<Doctor>{
+  delete(idDoctor: string): Observable<Doctor> {
     return this.http.delete<Doctor>(this.url + '/' + idDoctor);
   }
 }

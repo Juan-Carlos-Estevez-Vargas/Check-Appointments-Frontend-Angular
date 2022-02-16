@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Patient } from './Patient';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
-  private url = "http://localhost:8080/patient";
-  constructor(private http:HttpClient) { }
+  private url = environment.baseUrl + "patient";
+  constructor(private http: HttpClient) { }
 
   /**
    * Se encarga de conectarse con el API REST del backend 
@@ -17,8 +18,8 @@ export class PatientService {
    * 
    * @returns Lista de pacientes obtenida.
    */
-  getAll():Observable<Patient[]>{
-    return this.http.get<Patient[]>(this.url+'/findAll');
+  getAll(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.url + '/findAll');
   }
 
   /**
@@ -28,7 +29,7 @@ export class PatientService {
    * 
    * @returns Inserción de paciente.
    */
-  create(patient:Patient):Observable<Patient>{
+  create(patient: Patient): Observable<Patient> {
     return this.http.post<Patient>(this.url, patient);
   }
 
@@ -39,8 +40,8 @@ export class PatientService {
    * 
    * @returns Paciente encontrado.
    */
-  get(idPatient:string):Observable<Patient>{
-    return this.http.get<Patient>(this.url+'/findById/'+idPatient);
+  get(idPatient: string): Observable<Patient> {
+    return this.http.get<Patient>(this.url + '/findById/' + idPatient);
   }
 
   /**
@@ -50,7 +51,7 @@ export class PatientService {
    * 
    * @returns Paciente actualizado.
    */
-  update(patient:Patient):Observable<Patient>{
+  update(patient: Patient): Observable<Patient> {
     return this.http.put<Patient>(this.url, patient);
   }
 
@@ -61,8 +62,8 @@ export class PatientService {
    * 
    * @returns Paciente actualizado.
    */
-  delete(idPatient:string):Observable<Patient>{
-    return this.http.delete<Patient>(this.url+'/'+idPatient);
+  delete(idPatient: string): Observable<Patient> {
+    return this.http.delete<Patient>(this.url + '/' + idPatient);
   }
 
 }
