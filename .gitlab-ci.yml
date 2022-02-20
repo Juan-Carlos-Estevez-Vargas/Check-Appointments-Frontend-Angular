@@ -32,3 +32,35 @@ test:
   script:
     - npm run test:ci
   coverage: '/Statements.*?(\d+(?:\.\d+)?)%/'
+
+build:
+  stage: build
+  variables:
+    BUILD_CONFIG: "production"
+  dependencies:
+    - install
+  script:
+    - npm run build:ci
+  artifacts:
+    expire_in: 1h
+    paths:
+      - dist/
+  only:
+    - master
+
+pages:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - mkdir public
+    - mv ./dist/check-appointments-frontend/* ./public/
+    - cp ./public/index.html public/404.html
+  artifacts:
+    expire_in: 1h
+    paths:
+      - public/
+  environment:
+    name: production
+  only:
+    - master
