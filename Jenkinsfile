@@ -5,11 +5,6 @@ node {
     }
 
     stage('Install node modules') {
-        sh "npm install"
+        echo 'hola'
     }
-
-    stage('Test') {
-        sh "npm run test"
-    }
-
 }
