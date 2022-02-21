@@ -5,6 +5,6 @@ node {
     }
 
     stage('Install node modules') {
-        echo 'hola'
+        sh 'npm install'
     }
 }
