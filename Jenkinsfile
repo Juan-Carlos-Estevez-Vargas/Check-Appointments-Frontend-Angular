@@ -19,7 +19,7 @@ node {
         }
 
         stage('Build') {
-            steps {
+            steps {|
                  echo 'npm build --prod'
             } 
         }
